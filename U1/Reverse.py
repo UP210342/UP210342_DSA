@@ -1,6 +1,7 @@
 a = [10,20,30,40,50]
 b = []
-for i in range(0, len(a)):
-   b = 
+i = (len(a)- 1)
+while i >= 0:
+   b.append(a[i])
+   i-= 1
 print(b)
-
