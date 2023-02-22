@@ -17,6 +17,8 @@ while P[pos] != ')':
             c = a * b
         elif P[pos] == '/':
             c = a/b
+        elif P[pos] == '^':
+            c = a**b
         stack.append(c)
     pos+=1
 value = stack.pop()

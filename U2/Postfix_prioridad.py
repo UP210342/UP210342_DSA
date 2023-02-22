@@ -7,8 +7,8 @@ def priority(c):
         return 2 
     elif c in ['^']:
         return 3
-    elif c in ['()']:
-        return 4
+    elif c in ['(']:
+        return 0
 
 if p[0] in ['+','*','-','/']:
     print('operador')
