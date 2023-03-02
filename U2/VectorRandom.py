@@ -8,6 +8,15 @@ def NoRepetir(x,vector):
             break
     return NoR
 
+def Bubblesort(vector):
+    x = len(vector)
+    swap = False 
+    for i in range(x-1):
+        for j in range(0,x-i-1):
+            if vector[j] > vector[j+1]:
+                swap = True
+                vector[j], vector[j+1] = vector[j+1], vector[j]
+
 def Quicksort(a, primero, ultimo):
     central = (primero + ultimo) // 2
     pivote = a[central]
@@ -56,24 +65,31 @@ def BinarySearch(datos,elemento):
     
     return pos,con
 
+z = 0
 vector = []
-n = 0
 inicio = 0
 final = len(vector) -1
 
-while n < 10:
+n = int(input('\nIngresa el tamaño de tu vector: '))
+while z < n:
   x = random.randint(101,500)
   if NoRepetir(x,vector):
     vector.append(x)
-    n+=1
+    z+=1
 
 primero = 0
 final = len(vector) -1
 
-print('\nVector random sin organizar: ',vector)
+print('\nIngresa el metodo que deseas usar para acomodar el vector: \n 1. Bubblesort \n 2. Quicksort \n')
 
-Quicksort(vector,primero,final)
-print('\nVector random organizado: ',vector)
+opcion = int(input())
+
+if opcion == 1:
+    Quicksort(vector,primero,final)
+    print('\nVector random organizado: ',vector)
+else:
+    Bubblesort(vector)
+    print('\nVector random organizado: ',vector)
 
 elemento = int(input('\nIngresa el elemento que deseas buscar: '))
 x,y = BinarySearch(vector,elemento)
